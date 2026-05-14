@@ -26,8 +26,9 @@ app.post("/", async (req, res) => {
     // if (msg.business_connection_id !== BUSINESS_CONNECTION_ID) {
     //   return res.send("IGNORED");
     // }
-
+    console.log("Received command: " + msg.text);
     if (msg.text?.startsWith("/")) {
+        
       const cmd = msg.text.split(" ")[0].toLowerCase();
 
       if (cmd === "/gc" || cmd === "/list") {
