@@ -23,6 +23,7 @@ app.post("/", async (req, res) => {
 
   if (update.business_message) {
     const msg = update.business_message;
+
     // if (msg.business_connection_id !== BUSINESS_CONNECTION_ID) {
     //   return res.send("IGNORED");
     // }
@@ -45,7 +46,7 @@ app.post("/", async (req, res) => {
         await bot.sendMessage(msg.chat.id, "❌ Unknown command");
       }
     }else{
-        await bot.sendMessage(msg.chat.id, "You wrote: " + msg.text);
+        await bot.sendMessage(msg.chat.id, "You wrote: " + msg.text,{business_connection_id:msg.business_connection_id});
     }
   }
 
