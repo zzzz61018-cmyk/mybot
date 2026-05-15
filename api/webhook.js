@@ -45,8 +45,9 @@ app.post("/", async (req, res) => {
       } else {
         await bot.sendMessage(msg.chat.id, "❌ Unknown command");
       }
-    }else{
-        await bot.sendMessage(msg.chat.id, "You wrote: " + msg.text,{business_connection_id:msg.business_connection_id});
+    }else if(msg.text?.trim().toLowerCase()=="gali"){
+      await bot.sendMessage(msg.chat.id, "Jo bole uski- Chandni raat mai chamakte............. ");
+
     }
   }
 
